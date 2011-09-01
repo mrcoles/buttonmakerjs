@@ -30,15 +30,27 @@ $(function() {
         font_size: 13
     };
 
+    var didChange = false;
+    function addUnload() {
+        window.onbeforeunload = function() {
+            return 'You have made changes to this page, are you sure you want to close this window?';
+        };
+    }
+
     function change(evt, initialize) {
         var state = {};
+
+        if (!initialize && !didChange) {
+            didChange = true;
+            addUnload();
+        }
 
         $('form').find(':input').each(function() {
             var $this = $(this), val;
             initialize && $this.val($this.data('default'));
 
-            val = $.htmlEscape($this.val() || $this.data('default'));
-            //if ($this.hasClass('color') && val.substring(0, 1) != '#') val = '#' + val;
+            val = $.trim($.htmlEscape($this.val() || $this.data('default')));
+            if ($this.hasClass('color') && (val.length == 3 || val.length == 6) && val.substring(0, 1) != '#') val = '#' + val;
             if (/^\d+$/.test(val)) val = parseInt(val);
 
             state[this.name] = val;

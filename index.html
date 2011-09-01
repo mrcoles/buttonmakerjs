@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-	<meta charset=utf-8>
-	<title>Button Maker</title>
-	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-  </head>
-  <body>
-	<div id="container">
+    <head>
+	    <meta charset=utf-8>
+	    <title>Button Maker</title>
+        <link rel="canonical" href="http://mrcoles.com/buttonmakerjs/" />
+	    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    </head>
+    <body>
+	    <div id="container">
 
-	  <h2 class="right"><a href="http://mrcoles.com/">MrColes.com</a></h2>
+	        <h2 class="right"><a href="http://mrcoles.com/">MrColes.com</a></h2>
 
-	  <h3 class="widget">Button Maker!</h3>
+	        <h3 class="widget">Button Maker!</h3>
 
-	  <div id="buttons" class="widget">
-		<button>button</button>
-		<button>another button</button><br>
-		<a class="button" href="#" onclick="return false">link</a>
-		<a class="button" href="#" onclick="return false">another link</a><br>
-	  </div>
+	        <div id="buttons" class="widget">
+		        <button>button</button>
+		        <button>another button</button><br>
+		        <a class="button" href="#" onclick="return false">link</a>
+		        <a class="button" href="#" onclick="return false">another link</a><br>
+	        </div>
 
-	  <form id="controls" class="widget">
-		<div id="gradient-home">
-		  Gradient image:<br><br>
-		</div>
-		<p>
-		  <label>top color:</label>
-		  <input id="id_top_color" class="color" name="top_color" data-default="#f3f3f3" />
+	        <form id="controls" class="widget">
+		        <div id="gradient-home">
+		            Gradient image:<br><br>
+		        </div>
+		        <div class="col">
+		            <p>
+			            <label>top color:</label>
+			            <input id="id_top_color" class="color" name="top_color" data-default="#f3f3f3" />
+		            </p>
+		            <p>
+			            <label>bottom color:</label>
+			            <input id="id_bottom_color" class="color" name="bottom_color" data-default="#ddd" />
+		            </p>
+		            <p>
+			            <label>border color:</label>
+			            <input id="id_border_color" class="color" name="border_color" data-default="#bbb" />
+		            </p>
+                    <p>
+		                <label>border radius:</label>
+		                <input id="id_border_radius" class="text" name="border_radius" data-default="4" />
+		            </p>
+		            <p>
+		                <label>font color:</label>
+		                <input id="id_color" class="color" name="color" data-default="#111" />
+                    </p>
+		            <p>
+		                <label>grid height:</label>
+		                <input id="id_grid_height" class="text" name="grid_height" data-default="36" />
+		            </p>
+                </div>
 
-		  <label>top color hover:</label>
-		  <input id="id_top_color_hover" class="color" name="top_color_hover" data-default="#dedede" />
-		</p>
-		<p>
-		  <label>bottom color:</label>
-		  <input id="id_bottom_color" class="color" name="bottom_color" data-default="#ddd" />
+                <div class="col">
+		            <p>
+		                <label>top color hover:</label>
+		                <input id="id_top_color_hover" class="color" name="top_color_hover" data-default="#dedede" />
+		            </p>
+		            <p>
+		                <label>bottom color hover:</label>
+		                <input id="id_bottom_color_hover" class="color" name="bottom_color_hover" data-default="#ddd" />
+		            </p>
+		            <p>
+		                <label>border color hover:</label>
+		                <input id="id_border_color_hover" class="color" name="border_color_hover" data-default="#bbb" />
+		            </p>
+                </div>
+	        </form>
 
-		  <label>bottom color hover:</label>
-		  <input id="id_bottom_color_hover" class="color" name="bottom_color_hover" data-default="#ddd" />
-		</p>
-		<p>
-		  <label>border color:</label>
-		  <input id="id_border_color" class="color" name="border_color" data-default="#bbb" />
+	        <textarea id="code" class="widget"></textarea>
 
-		  <label>border color hover:</label>
-		  <input id="id_border_color_hover" class="color" name="border_color_hover" data-default="#bbb" />
-		</p>
-		<p>
-		  <label>border radius:</label>
-		  <input id="id_border_radius" name="border_radius" data-default="4" />
-		</p>
-		<p>
-		  <label>font color:</label>
-		  <input id="id_color" class="color" name="color" data-default="#111" />
-		</p>
-		<p>
-		  <label>grid height:</label>
-		  <input id="id_grid_height" name="grid_height" data-default="36" />
-		</p>
-	  </form>
+	        <p class="small dim">*Note: hold onto that javascript:loadState(...) part in your CSS comments, you can always come back and paste it into the url bar (or run it in your JS console) to reload your current state.</p>
+	    </div>
 
-	  <textarea id="code" class="widget"></textarea>
-
-	  <p class="small dim">*Note: hold onto that javascript:loadState(...) part in your CSS comments, you can always come back and paste it into the url bar (or run it in your JS console) to reload your current state.</p>
-	</div>
-
-	<canvas id="grid-canvas"></canvas>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script> -->
-	<script src="jquery.1.6.0.min.js"></script>
-	<script src="jscolor/jscolor.js"></script>
-	<script src="maker.js"></script>
-  </body>
+	    <canvas id="grid-canvas"></canvas>
+	    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script> -->
+	    <script src="jquery.1.6.0.min.js"></script>
+	    <script src="jscolor/jscolor.js"></script>
+	    <script src="maker.js"></script>
+    </body>
 </html>
