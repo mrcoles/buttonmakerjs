@@ -26,7 +26,6 @@ $(function() {
 
     var hardcoded = {
         border_size: 1,
-        margin_top_bottom: 4,
         font_size: 13
     };
 
@@ -56,7 +55,7 @@ $(function() {
             state[this.name] = val;
         });
 
-        var height = state.grid_height - 2*hardcoded.border_size - 2*hardcoded.margin_top_bottom;
+        var height = state.grid_height - 2*hardcoded.border_size - 2*state.margin_top;
 
         var gradient = makeGradients(height, state.top_color, state.bottom_color, state.top_color_hover, state.bottom_color_hover);
         var dataURL = gradient.toDataURL('image/png');
@@ -78,7 +77,7 @@ $(function() {
             '    display: -moz-inline-box;',
             '    display: inline-block;',
             '    position: relative;',
-            '    margin: ' + hardcoded.margin_top_bottom + 'px 0;',
+            '    margin: ' + state.margin_top + 'px 0;',
             '    padding: 0 12px;',
             '    border: ' + hardcoded.border_size + 'px solid ' + state.border_color + ';',
             '    height: ' + height + 'px;',
@@ -197,10 +196,6 @@ $(function() {
     $('#id_grid_height').change(doGrid);
 
     doGrid();
-
-    function _getButtonHeight(grid_height) {
-        return grid_height - 2*hardcoded.border_size - 2*hardcoded.margin_top_bottom;
-    }
 
     //
     // gradient images
